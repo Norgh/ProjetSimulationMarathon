@@ -1,0 +1,2 @@
+# TestCMakeSFMLGit
+Un simple test
