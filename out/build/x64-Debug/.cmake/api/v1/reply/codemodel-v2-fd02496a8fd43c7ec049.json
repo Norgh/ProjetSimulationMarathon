@@ -38,7 +38,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "TestCMakeSFMLGit::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-TestCMakeSFMLGit-Debug-c3aea4ec80ff7282ec1b.json",
+					"jsonFile" : "target-TestCMakeSFMLGit-Debug-9b8c4d14c0e2e4268578.json",
 					"name" : "TestCMakeSFMLGit",
 					"projectIndex" : 0
 				}
@@ -48,7 +48,7 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/Administrateur/source/repos/TestCMakeSFMLGit/out/build/x64-Debug (par défaut)",
+		"build" : "C:/Users/Administrateur/source/repos/TestCMakeSFMLGit/out/build/x64-Debug",
 		"source" : "C:/Users/Administrateur/source/repos/TestCMakeSFMLGit"
 	},
 	"version" : 

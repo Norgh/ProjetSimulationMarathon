@@ -173,7 +173,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="C:\Users\Administrateur\source\repos\TestCMakeSFMLGit\main.cpp" />
-    <ClCompile Include="C:\Users\Administrateur\source\repos\TestCMakeSFMLGit\test2.cpp" />
+    <ClCompile Include="C:\Users\Administrateur\source\repos\TestCMakeSFMLGit\class.cpp" />
+    <ClCompile Include="C:\Users\Administrateur\source\repos\TestCMakeSFMLGit\function.cpp" />
+    <ClInclude Include="C:\Users\Administrateur\source\repos\TestCMakeSFMLGit\header.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\Users\Administrateur\source\repos\TestCMakeSFMLGit\build\ZERO_CHECK.vcxproj">

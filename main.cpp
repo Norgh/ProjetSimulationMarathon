@@ -1,23 +1,44 @@
-#include <iostream>
-#include <cstdlib>
 #include <SFML/Graphics.hpp>
+#include "header.hpp"
+#define _PATH_IMG_ "../../../img/"
+using namespace std;
+using namespace sf;
+const std::string path_image(_PATH_IMG_);
 
 int main() {
-    sf::RenderWindow window(sf::VideoMode(1920, 1080), "SFML works!"); //,sf::Style::Fullscreen en paramètre de window pour un fullscreen qui pique aux yeux
-    sf::CircleShape shape(100.f, 4);
-    shape.setFillColor(sf::Color::Green);
+	/*const Vector2u WINDOW_SIZE(1920, 1080);
 
-    while (window.isOpen())
-    {
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                window.close();
-        }
+	RenderWindow app(VideoMode(WINDOW_SIZE.x, WINDOW_SIZE.y, 32), "My Game");
+	app.setFramerateLimit(60);
+	//Texture testbg;
+	//testbg.loadFromFile(path_image + "shark.jpeg");
+	//Sprite stestbg(testbg);
 
-        window.clear();
-        window.draw(shape);
-        window.display();
-    }
+	while (app.isOpen()) 
+	{
+		Event event;
+		while (app.pollEvent(event)) 
+		{
+			if ((event.type == Event::KeyPressed && event.key.code == sf::Keyboard::Escape) || event.type == Event::Closed)
+			{
+				app.close();
+			}
+		}
+
+		//if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {}
+
+		// Display
+		
+		app.clear();
+		//app.draw(stestbg);
+		app.display();
+		
+	}*/
+	string file = "parcours.txt";
+	string file2 = "coureurs.txt";
+	Trajectory test = getParcours(file, numberOfLines(file));
+	test.print();
+	Participants ttest = getCoureurs(file2, numberOfLines(file));
+	ttest.getCoureur(0).print();
+	return EXIT_SUCCESS;
 }

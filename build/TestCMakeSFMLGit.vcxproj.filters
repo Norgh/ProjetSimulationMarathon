@@ -4,14 +4,25 @@
     <ClCompile Include="C:\Users\Administrateur\source\repos\TestCMakeSFMLGit\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Administrateur\source\repos\TestCMakeSFMLGit\test2.cpp">
+    <ClCompile Include="C:\Users\Administrateur\source\repos\TestCMakeSFMLGit\class.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\Administrateur\source\repos\TestCMakeSFMLGit\function.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Administrateur\source\repos\TestCMakeSFMLGit\header.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\Administrateur\source\repos\TestCMakeSFMLGit\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{EAAD57C2-2ABD-3148-B85D-754A55ED2AAE}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{C254219C-299B-3EC5-8789-C72BFD0DC73D}</UniqueIdentifier>
     </Filter>
