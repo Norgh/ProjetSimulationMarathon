@@ -23,7 +23,6 @@ Trajectory getParcours(string text, int nbline) {
 	file.open(text);
 	string line;
 	string word;
-	int nbword = 0;
 	if (file.is_open())
 	{
 		Trajectory parcours(nbline);
@@ -58,22 +57,25 @@ Trajectory getParcours(string text, int nbline) {
 		}
 		file.close();
 		return parcours;
-	};
+	}
+	else {
+		return EXIT_FAILURE;
+	}
 }
 
-Participants getCoureurs(string text, int nbline) {
+Participants getCoureurs(string text, int nbline2) {
 
 	ifstream file;
 	file.open(text);
 	string line;
 	string word;
-	int nbword = 0;
+	int i = 0;
 	if (file.is_open())
 	{
-		Participants coureurs(nbline);
-		int i = 0;
+		Participants coureurs(nbline2);
 		int c = 0;
 		float stat = 0;
+		int stat2 = 0;
 		while (!file.eof())
 		{
 			getline(file, line);
@@ -83,25 +85,34 @@ Participants getCoureurs(string text, int nbline) {
 			{
 				if (c == 0)
 				{
-					stat = stof(word);
-					coureurs.getCoureur(i).setWeight(stat);
+					coureurs.getCoureur(i).setName(word);
 				}
 				if (c == 1)
 				{
-					stat = stof(word);
-					coureurs.getCoureur(i).setHeight(stat);
+					stat2 = stoi(word);
+					coureurs.getCoureur(i).setNumDossard(stat2);
 				}
 				if (c == 2)
 				{
 					stat = stof(word);
-					coureurs.getCoureur(i).setShoes(stat);
+					coureurs.getCoureur(i).setWeight(stat);
 				}
 				if (c == 3)
 				{
 					stat = stof(word);
-					coureurs.getCoureur(i).setMedSpeed(stat);
+					coureurs.getCoureur(i).setHeight(stat);
 				}
 				if (c == 4)
+				{
+					stat = stof(word);
+					coureurs.getCoureur(i).setShoes(stat);
+				}
+				if (c == 5)
+				{
+					stat = stof(word);
+					coureurs.getCoureur(i).setMedSpeed(stat);
+				}
+				if (c == 6)
 				{
 					stat = stof(word);
 					coureurs.getCoureur(i).setAmountOfWeeks(stat);
@@ -112,5 +123,10 @@ Participants getCoureurs(string text, int nbline) {
 		}
 		file.close();
 		return coureurs;
-	};
+	}
+	else
+	{
+		return EXIT_FAILURE;
+	}
+
 }

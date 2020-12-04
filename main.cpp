@@ -38,7 +38,11 @@ int main() {
 	string file2 = "coureurs.txt";
 	Trajectory test = getParcours(file, numberOfLines(file));
 	test.print();
-	Participants ttest = getCoureurs(file2, numberOfLines(file));
-	ttest.getCoureur(0).print();
+	Participants ttest = getCoureurs(file2, numberOfLines(file2));
+	for(int i=0;i<numberOfLines(file2);i++)
+	{
+		ttest.getCoureur(i).print();
+	}
+	cout << "Pente : " << test.getPoint(1).pente(test.getPoint(2));
 	return EXIT_SUCCESS;
 }

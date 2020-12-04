@@ -16,8 +16,6 @@ private:
 public:
 	// constuctors
 	Point3D(); // fill X Y Z with random values (from 0 to 100)
-	Point3D(const float& newx, const float& newy, const float& newz);
-	// fill XYZ values
 	// Setters and getters
 	void setXYZ(const float& newx, const float& newy, const float
 		& newz);
@@ -29,7 +27,7 @@ public:
 	float getZ();
 	// other methods
 	void print(); // prints the coordinates of the point
-	float distanceTo(const Point3D& otherPoint3D);
+	float pente(const Point3D& otherPoint3D);
 };
 
 class Trajectory {
@@ -40,13 +38,12 @@ public:
 	void print(); // print the coordinates of all points
 	Point3D& getPoint(const int& n); // returns the reference of point n
 	Trajectory(int size);
-	float getTotalDistance();
-	float getFirstLastPointDistance();
-	void destructor();
 };
 
 class Coureur {
 private:
+	string name;
+	int numdossard;
 	float weight;
 	float height;
 	float shoes;
@@ -54,9 +51,11 @@ private:
 	float amountofweeks;
 	float speed;
 	float hydratation;
-	float atmo;
+	float distance;
 public:
 	Coureur();
+	string getName();
+	int getNumDossard();
 	float getWeight();
 	float getHeight();
 	float getShoes();
@@ -64,7 +63,9 @@ public:
 	float getAmountOfWeeks();
 	float getSpeed();
 	float getHydratation();
-	float getAtmo();
+	float getDistance();
+	void setName(const string& newweight);
+	void setNumDossard(const int& newnumdossard);
 	void setWeight(const float& newweight);
 	void setHeight(const float& newheight);
 	void setShoes(const float& newshoes);
@@ -72,7 +73,7 @@ public:
 	void setAmountOfWeeks(const float& newamountofweeks);
 	void setSpeed(const float& newspeed);
 	void setHydratation(const float& newhydratation);
-	void setAtmo(const float& newatmo);
+	void setDistance(const float& newatmo);
 	void print();
 };
 
