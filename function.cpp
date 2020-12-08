@@ -17,116 +17,38 @@ int numberOfLines(string text)
 	return nbline;
 }
 
-Trajectory getParcours(string text, int nbline) {
-
-	ifstream file;
-	file.open(text);
-	string line;
-	string word;
-	if (file.is_open())
+float randomFloat(float const& min, float const& max)
+{
+	float myRandom;
+	do
 	{
-		Trajectory parcours(nbline);
-		int i = 0;
-		int c = 0;
-		float word1 = 0;
-		float word2 = 0;
-		float word3 = 0;
-		while (!file.eof())
-		{
-			getline(file, line);
-			stringstream ss(line);
-			c = 0;
-			while (ss >> word)
-			{
-				if (c == 0)
-				{
-					word1 = stof(word);
-				}
-				if (c == 1)
-				{
-					word2 = stof(word);
-				}
-				if (c == 2)
-				{
-					word3 = stof(word);
-				}
-				c++;
-			}
-			parcours.getPoint(i).setXYZ(word1, word2, word3);
-			i++;
-		}
-		file.close();
-		return parcours;
-	}
-	else {
-		return EXIT_FAILURE;
-	}
+		myRandom = min + ((float)rand() / ((float)RAND_MAX) * ((float)max + 1 - (float)min));
+	} while (myRandom > max);
+	return myRandom;
 }
 
-Participants getCoureurs(string text, int nbline2) {
-
-	ifstream file;
-	file.open(text);
-	string line;
-	string word;
-	int i = 0;
-	if (file.is_open())
+void randomCoureurs(const int& nbcoureurs)
+{
+	ofstream file5;
+	string tab[] = {"Pierre", "Mohamed", "Abdoul" , "Augusting" , "Jean_Michel" , "Poele_a_frire", "Louis_du_13" , "Julien-Marie" , "Albert_3eme_du_nom" , "Jaaj" , "Luc" , "Marie", "Camille", "Remiette" , "AlphaRouste" , "Super_Franky" , "Ahzutjairate" , "Croustille" , "Lolo" , "Mamene" , "Rico" , "Julien" , "Margot" , "Candide" , "Agathe" , "Georges" , "Coquillette" , "Arthur" , "Martine" , "Jack_Uzi" , "Le_Roi_du_Nord" , "Denis_Chon" , "Ricardo" , "Pepette" , "Moha" , "Ben_Arfa" , "Sanji" , "Robin" , "Batman_le_Vrai", "Clark_Kent" , "Sadoman" , "Petoman" , "Furax_Barbarossa" , "Karim", "Alkapote" , "Sinik" , "Julien_Schwartzer", "Alie_Yaffa", "Seth_Gueko" };
+	float randomstat = nbcoureurs;
+	int randomname=0;
+	file5.open("coureurs.txt");
+	for (int i = 0;i < nbcoureurs;i++)
 	{
-		Participants coureurs(nbline2);
-		int c = 0;
-		float stat = 0;
-		int stat2 = 0;
-		while (!file.eof())
-		{
-			getline(file, line);
-			stringstream ss(line);
-			c = 0;
-			while (ss >> word)
-			{
-				if (c == 0)
-				{
-					coureurs.getCoureur(i).setName(word);
-				}
-				if (c == 1)
-				{
-					stat2 = stoi(word);
-					coureurs.getCoureur(i).setNumDossard(stat2);
-				}
-				if (c == 2)
-				{
-					stat = stof(word);
-					coureurs.getCoureur(i).setWeight(stat);
-				}
-				if (c == 3)
-				{
-					stat = stof(word);
-					coureurs.getCoureur(i).setHeight(stat);
-				}
-				if (c == 4)
-				{
-					stat = stof(word);
-					coureurs.getCoureur(i).setShoes(stat);
-				}
-				if (c == 5)
-				{
-					stat = stof(word);
-					coureurs.getCoureur(i).setMedSpeed(stat);
-				}
-				if (c == 6)
-				{
-					stat = stof(word);
-					coureurs.getCoureur(i).setAmountOfWeeks(stat);
-				}
-				c++;
-			}
-			i++;
-		}
-		file.close();
-		return coureurs;
+		randomname = (int)randomFloat(0, 48);
+		file5 << tab[randomname] << " " << i << " ";
+		randomstat = randomFloat(45, 120);
+		file5 << randomstat << " ";
+		randomstat = randomFloat(1.3, 2);
+		file5 << randomstat << " ";
+		randomstat = randomFloat(100, 300);
+		file5 << (int)randomstat << " ";
+		randomstat = randomFloat(8, 20);
+		file5 << randomstat << " ";
+		randomstat = randomFloat(8, 16);
+		file5 << (int)randomstat << " " << endl;
 	}
-	else
-	{
-		return EXIT_FAILURE;
-	}
-
+	file5.close();
+	float test = nbcoureurs;
 }
